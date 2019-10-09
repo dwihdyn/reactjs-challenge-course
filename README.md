@@ -5,5 +5,5 @@
 Projects done :
 
 <ol>
-    <li>Day1 : <strong>| Incomplete | </strong> to be filled </li>
+    <li>Day1 : <strong>| https://code.nextacademy.com/lessons/optional--what-is-this-/8 : Incomplete | </strong> Introduction on JavaScript ES6 </li>
 </ol>
