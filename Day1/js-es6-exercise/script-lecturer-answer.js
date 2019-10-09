@@ -1,4 +1,5 @@
 // ================= run in powershell > find this pathfile > run script-lecturer-answer.js node.js
+// answer for all, except `spread syntax` & `"this" exercise`
 
 // randomString is simply 7 characters generated randomly:
 const randomString = Math.random()
