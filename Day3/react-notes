@@ -1,0 +1,104 @@
+ App.js react Basic code template: 
+    import React from "react";
+    import "./App.css";
+
+    class yourAppName extends React.Component {
+    constructor() {
+        super();
+    }
+
+    render() {}
+    }
+
+    export default yourAppName;
+
+============================================================================================
+
+function abc(props){
+     return <h1> hi {props.nameDefinedInConst}</h1>;
+}
+
+IS THE SAME AS 
+
+class abc extends React.Component{
+     render(){
+         return(<h1> hi {this.props.nameDefinedInConst} );
+   }
+}
+
+============================================================================================
+
+array.forEach() needs to be called again to summon the result
+array.maps() will summon the result automatically in an array mode
+
+.forEach() + result given in an array = .maps()
+
+============================================================================================
+
+in react :
+state CONTAINS the data of the websites. data such as username, id, password, images,etc. hence when data is changed, state is ALSO changed
+
+Example of : state contains the userData :
+  *state* = {
+    _usersData_: [
+      {
+        id: 1,
+        username: "blake",
+        profileImage: "http://next-curriculum-instagram.s3.amazonaws.com/idol2-blake.jpg"
+      },
+      {
+        id: 2,
+        username: "ryanG",
+        profileImage: "http://next-curriculum-instagram.s3.amazonaws.com/idol1-ryan.jpg"
+      },
+      {
+        id: 3,
+        username: "bigfan",
+        profileImage: "http://next-curriculum-instagram.s3.amazonaws.com/bigfan-9AE7468E-4C35-41D1-AA68-31939891B5E1.png"
+      }
+    ]
+  }
+
+============================================================================================
+
+  react :
+(...) is function
+{...} is object
+[...] is array
+
+============================================================================================
+
+axios : same idea as JQuery.ajax API call
+axios
+      axios 
+        .get("https://insta.nextacademy.com/api/v1/users") _// get is the method, the link is the API link_
+        .then(result => {
+          console.log("show me when successful");
+        })
+        .catch(error => {
+          console.log("show me when ERROR", error);
+        })
+jquery ajax
+$.ajax({
+   url: "https://next-message-board.herokuapp.com/messages",
+   method: "GET",
+   success: function(shownMessagesWhenSuccessful) {
+     console.log(shownMessagesWhenSuccessful);
+   },
+    error: function(showMessageWhenError) {
+      console.log(showMessageWhenError);
+    }
+ });
+
+============================================================================================
+
+ prop is property, used for children (loadingScreen.js) folder to call any objects from parents (app.js)
+
+eg : calling list of users,
+parent file : this.state.user
+children file : this.prop.user
+
+============================================================================================
+
+goal in https://code.nextacademy.com/lessons/react-props/22
+to make your app.js tidier, by putting your html codes into homepage.js

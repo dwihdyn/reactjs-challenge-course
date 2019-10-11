@@ -6,7 +6,8 @@ import { trackPromise } from "react-promise-tracker"; // for loading
 
 class App extends React.Component {
   state = {
-    users: []
+    users: [],
+    loading: true
   };
 
   componentDidMount() {
