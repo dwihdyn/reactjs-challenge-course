@@ -40,7 +40,7 @@ class App extends React.Component {
           <>
             <Link to="/">Home</Link>
             {/* Harcode below to id:12629 only. id can be change to any number `/users/700` */}
-            <Link to="/users/1">My Profile</Link>
+            <Link to="/users/2">My Profile</Link>
 
             <Switch>
               {/* Path to mainpage, need to load ALL users data using `childUsers={users} `*/}
@@ -52,13 +52,13 @@ class App extends React.Component {
                 }}
               />
 
-              {/* path to selected user, no need to load all user data, BUT we need to send the user data to UserProfilePage using 'props' */}
+              {/* {...props} path to selected user, no need to load all user data, BUT we need to send the user data to UserProfilePage using 'props' */}
               <Route
                 path="/users/:id"
-                component={props => {
-                  // below connect username database to UserProfilePage.js
-                  return <UserProfilePage childUsers={users} {...props} />;
-                }}
+                component={props => (
+                  // {users} below connect username database to UserProfilePage.js
+                  <UserProfilePage childUsers={users} {...props} />
+                )}
               />
             </Switch>
           </>

@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
-import { Image } from "react-bootstrap";
+import { ReactComponent as Loader } from "../Spinner-1s-200px.svg";
+import Image from "react-graceful-image";
 
 class UserProfilePage extends React.Component {
   state = {
     images: [],
-    selectedUserName: ``
+    selectedUserName: ``,
+    loading: true
   };
 
   // load the selected user profile pic using API
@@ -18,7 +20,8 @@ class UserProfilePage extends React.Component {
       console.log(currentUser);
       if (oneUser.id === parseInt(currentUser)) {
         this.setState({
-          selectedUserName: oneUser.username
+          selectedUserName: oneUser.username,
+          loading: false
         });
       }
     });
@@ -33,7 +36,7 @@ class UserProfilePage extends React.Component {
   }
 
   render() {
-    const { images, selectedUserName } = this.state;
+    const { images, selectedUserName, loading } = this.state;
 
     return (
       <>
@@ -45,11 +48,20 @@ class UserProfilePage extends React.Component {
         <h4>{selectedUserName} </h4>
 
         {/* since there are multiple images owned by every user, need to use .map */}
-        <div className="d-flex flex-wrap w-25">
-          {images.map((everyImage, index) => {
-            return <Image key={index} src={everyImage} />;
-          })}
-        </div>
+
+        {loading ? (
+          <Loader alt="loading gif" />
+        ) : (
+          <div className="d-flex flex-wrap w-75" style={{ height: "100%" }}>
+            {images.map((everyImage, index) => {
+              return (
+                <div style={{ width: "25%", height: "50%" }}>
+                  <Image className="h-100 w-100" key={index} src={everyImage} />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </>
     );
   }

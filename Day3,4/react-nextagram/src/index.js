@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { usePromiseTracker } from "react-promise-tracker"; // for loading
 import Loader from "react-loader-spinner";
 
+// challenge2 : https://code.nextacademy.com/lessons/stateless-functional-component/25
 const LoadingIndicator = props => {
   const { promiseInProgress } = usePromiseTracker();
 
