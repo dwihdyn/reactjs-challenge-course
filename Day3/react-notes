@@ -119,3 +119,19 @@ the tutorial in the learning platform : https://code.nextacademy.com/lessons/rea
 ============================================================================================
 
 {...props} shows EVERYTHING inside the props array
+
+============================================================================================
+
+ternary condition :
+{condition ? (do_me_if_true) : (do_me_if_false)}
+
+============================================================================================
+
+every function{} MUST have `return`, or it will show error below:
+
+Expected an assignment or function call and instead saw an expression  no-unused-expressions
+
+============================================================================================
+
+class component CAN have state
+function dont have state
