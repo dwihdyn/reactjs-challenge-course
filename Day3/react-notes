@@ -1,3 +1,8 @@
+Day3 :
+
+
+Day4 :
+
  App.js react Basic code template: 
     import React from "react";
     import "./App.css";
@@ -102,3 +107,15 @@ children file : this.prop.user
 
 goal in https://code.nextacademy.com/lessons/react-props/22
 to make your app.js tidier, by putting your html codes into homepage.js
+
+============================================================================================
+
+<Route path="/users/:id" component={UserProfilePage} /> the ":" in :id represent wildcard of any id that is selected by user
+
+============================================================================================
+
+the tutorial in the learning platform : https://code.nextacademy.com/lessons/react-router/27 is calling the data from HomePage.js (https://code.nextacademy.com/lessons/home-page-with-api-call/21). and the react-nextagram-mentor-answer are calling directly inside App.js
+
+============================================================================================
+
+{...props} shows EVERYTHING inside the props array

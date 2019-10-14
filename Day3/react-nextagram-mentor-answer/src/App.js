@@ -2,7 +2,9 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 import { ReactComponent as Loader } from "./Spinner-1s-200px.svg";
-import HomePage from "./HomePage";
+import HomePage from "./pages/HomePage";
+import { Route, Switch, Link } from "react-router-dom";
+import UserProfilePage from "./pages/UserProfilePage";
 
 class App extends React.Component {
   state = {
@@ -11,6 +13,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    // get users
     axios
       .get("https://insta.nextacademy.com/api/v1/users")
       .then(result => {
@@ -18,6 +21,7 @@ class App extends React.Component {
           users: [...result.data],
           loading: false
         });
+        console.log(this.users);
       })
       .catch(error => console.log(error));
   }
@@ -33,18 +37,31 @@ class App extends React.Component {
             <Loader alt="loading gif" />
           </>
         ) : (
-          // Below has been moved to Homepage.js to make things tidier
-          // <>
-          //   <ul>
-          //     {this.state.users.map(user => (
-          //       <li>
-          //         {user.id}: {user.username}{" "}
-          //         <img src={user.profileImage} alt="user profile pic" />
-          //       </li>
-          //     ))}
-          //   </ul>
-          // </>
-          <HomePage childUsers={users} />
+          <>
+            <Link to="/">Home</Link>
+            {/* Harcode below to id:12629 only. id can be change to any number `/users/700` */}
+            <Link to="/users/1">My Profile</Link>
+
+            <Switch>
+              {/* Path to mainpage, need to load ALL users data using `childUsers={users} `*/}
+              <Route
+                exact
+                path="/"
+                component={() => {
+                  return <HomePage childUsers={users} />;
+                }}
+              />
+
+              {/* path to selected user, no need to load all user data, BUT we need to send the user data to UserProfilePage using 'props' */}
+              <Route
+                path="/users/:id"
+                component={props => {
+                  // below connect username database to UserProfilePage.js
+                  return <UserProfilePage childUsers={users} {...props} />;
+                }}
+              />
+            </Switch>
+          </>
         )}
       </div>
     );
