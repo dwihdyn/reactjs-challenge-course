@@ -144,3 +144,59 @@ To collect data from multiple children, or to have two child components communic
 you need to declare the shared state in their parent component instead. 
 The parent component can pass the state back down to the children by using props; 
 this keeps the child components in sync with each other and with the parent component.
+
+============================================================================================
+
+Good Practice 
+first thing to do after axios get/post file, always console.log(result)
+
+    axios
+      .get("https://insta.nextacademy.com/api/v1/users")
+      .then(result => {
+        console.log(result); // good practice, to help visualise the output
+        this.setState({
+          users: [...result.data]
+        });
+      })
+      .catch(error => console.log(error));
+  }
+
+
+
+========  HOW TO USE AXIOS STEP BY STEP  ========
+
+  Step 1:
+Install axios
+npm install axios
+​
+Step 2:
+Import axios
+import axios from 'axios';
+​
+Step 3:
+Use axios
+​
+​
+axios
+	// Specify the methods, common ones are GET and POST
+	// The url of the endpoint
+	.get("https://insta.nextacademy.com/api/v1/users")
+​
+	// When the request succeeds, do something with the response
+	.then(resp => {
+		// I like to console.log the resp to see what the data look like
+		// This way I know what I can do to manipulate and interact with the data
+		console.log("resp.data", resp.data);
+		// Do something else with the data
+		this.setState({
+			users: [...resp.data]
+		})
+	})
+	// When the request fails, do something with the error
+	.catch(err => {
+		console.log(err);
+	});
+Collapse
+
+
+============================================================================================

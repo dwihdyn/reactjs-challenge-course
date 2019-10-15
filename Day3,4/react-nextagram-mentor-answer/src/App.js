@@ -49,7 +49,7 @@ class App extends React.Component {
                 exact
                 path="/"
                 component={() => {
-                  return <HomePage childUsers={users} />;
+                  return <HomePage childUsers={users} />; // parent(app.js) send users data to child(HomePage.js), and child can use data by calling `props`
                 }}
               />
 
@@ -58,7 +58,7 @@ class App extends React.Component {
                 path="/users/:id"
                 component={props => (
                   // {users} below connect username database to UserProfilePage.js
-                  <UserProfilePage childUsers={users} {...props} />
+                  <UserProfilePage childUsers={users} {...props} /> // parent(app.js) send users & ...props data to child(UserProfilePage.js), and child can use data by calling `props` . {...props} comes from grandfather(axios all user data line 17-28)
                 )}
               />
             </Switch>
