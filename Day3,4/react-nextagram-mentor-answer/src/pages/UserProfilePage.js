@@ -28,6 +28,7 @@ class UserProfilePage extends React.Component {
     axios
       .get(`https://insta.nextacademy.com/api/v1/images?userId=${currentUser}`)
       .then(resultFromLink => {
+        console.log(resultFromLink); // good practice, to help visualise the output
         this.setState({
           images: resultFromLink.data
         });

@@ -16,12 +16,13 @@ class UserImages extends React.Component {
         `https://insta.nextacademy.com/api/v1/images?userId=${this.props.userId}`
       )
       .then(resultFromLink => {
+        console.log(resultFromLink); // good practice, to help visualise the output
         this.setState({
           images: resultFromLink.data,
           loading: false
         });
 
-        console.log(resultFromLink.data);
+        // console.log(resultFromLink.data);
       });
   }
 
@@ -35,13 +36,8 @@ class UserImages extends React.Component {
           <div className="d-flex flex-wrap" style={{ height: "100%" }}>
             {images.map((everyImage, index) => {
               return (
-                <div style={{ width: "25%", height: "50%" }}>
-                  <Image
-                    className="h-100 w-100"
-                    key={index}
-                    src={everyImage}
-                    fluid
-                  />
+                <div key={index} style={{ width: "25%", height: "50%" }}>
+                  <Image className="h-100 w-100" src={everyImage} fluid />
                 </div>
               );
             })}

@@ -16,12 +16,20 @@ import "./index.css";
 // 1st class : Square - 1 small square
 class Kotak extends React.Component {
   // converts whatever inside render() to be display to website
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: null // tell react to start the game with empty boxes, NOT number of each array
-    };
-  }
+
+  // // method1 : contructor & super can be ignored, even on large scale project
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     value: null // tell react to start the game with empty boxes, NOT number of each array
+  //   };
+  // }
+
+  // method2 (tidier & give EXACT same result with method1)
+  state = {
+    value: null
+  };
+
   render() {
     return (
       <button

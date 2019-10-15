@@ -17,11 +17,12 @@ class App extends React.Component {
     axios
       .get("https://insta.nextacademy.com/api/v1/users")
       .then(result => {
+        console.log(result); // good practice, to help visualise the output
         this.setState({
           users: [...result.data],
           loading: false
         });
-        console.log(this.users);
+        // console.log(this.users);
       })
       .catch(error => console.log(error));
   }
