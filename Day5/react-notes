@@ -1,0 +1,13 @@
+Good practice :
+
+function testing(e){
+    console.log(e)  // ALWAYS console.log the input, to know what exactly do you want to output
+    // more action
+    // more action
+}
+
+============================================================================================
+
+function App(){} + state{} = class App extends React.Component{}
+
+============================================================================================
