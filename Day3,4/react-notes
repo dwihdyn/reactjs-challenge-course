@@ -130,3 +130,17 @@ Expected an assignment or function call and instead saw an expression  no-unused
 
 class component CAN have state
 function dont have state
+
+============================================================================================
+
+setState explanation on Building tictactoe : 
+By calling this.setState from an onClick handler in the Square’s render method, we tell React to re-render that Square whenever its <button> is clicked
+
+============================================================================================
+
+state vs props explained :
+
+To collect data from multiple children, or to have two child components communicate with each other, 
+you need to declare the shared state in their parent component instead. 
+The parent component can pass the state back down to the children by using props; 
+this keeps the child components in sync with each other and with the parent component.
