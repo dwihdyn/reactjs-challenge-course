@@ -11,3 +11,5 @@ function testing(e){
 function App(){} + state{} = class App extends React.Component{}
 
 ============================================================================================
+
+<input OnChange="..."> OnChange triggers everytime user type every single character in it 

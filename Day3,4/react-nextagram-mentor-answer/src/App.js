@@ -5,6 +5,7 @@ import { ReactComponent as Loader } from "./Spinner-1s-200px.svg";
 import HomePage from "./pages/HomePage";
 import { Route, Switch, Link } from "react-router-dom";
 import UserProfilePage from "./pages/UserProfilePage";
+import Navbar from "./components/Navbar";
 
 class App extends React.Component {
   state = {
@@ -39,9 +40,12 @@ class App extends React.Component {
           </>
         ) : (
           <>
-            <Link to="/">Home</Link>
-            {/* Harcode below to id:12629 only. id can be change to any number `/users/700` */}
-            <Link to="/users/2">My Profile</Link>
+            {/* method1 : separate file (good practice) */}
+            <Navbar />
+
+            {/* method2 : direct  */}
+            {/* <Link to="/">Home</Link>
+            <Link to="/users/2">My Profile</Link> */}
 
             <Switch>
               {/* Path to mainpage, need to load ALL users data using `childUsers={users} `*/}
@@ -70,8 +74,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-xshbvxsj;
-
-xskabxkas;
-xskjbxksa;
