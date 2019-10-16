@@ -24,7 +24,7 @@ class App extends React.Component {
         allToDo: [
           ...this.state.allToDo,
           { task: this.state.newToDo, done: false }
-        ],
+        ], // good practice : first step ALWAYS make deep copy
         newToDo: ""
       });
       console.log(this.state.newToDo);
@@ -35,7 +35,7 @@ class App extends React.Component {
   };
 
   deleteItem = key => {
-    const copyAllToDo = [...this.state.allToDo];
+    const copyAllToDo = [...this.state.allToDo]; // good practice : first step ALWAYS make deep copy
     copyAllToDo.splice(key, 1); // if we `const newNewToDo = copcopyAllToDo.splice(key, 1);` it keep the one we select and delete the rest. Why ?  splice nature is to show the selected things that you want to keep, NOT delete
     this.setState({
       allToDo: [...copyAllToDo]
@@ -43,8 +43,7 @@ class App extends React.Component {
   };
 
   completeTask = key => {
-    // Logic here
-    const copyAllToDo = [...this.state.allToDo];
+    const copyAllToDo = [...this.state.allToDo]; // good practice : first step ALWAYS make deep copy
     copyAllToDo[key].done = true;
     this.setState({
       allToDo: [...copyAllToDo]

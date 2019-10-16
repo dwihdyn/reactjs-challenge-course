@@ -41,12 +41,15 @@ class UserProfilePage extends React.Component {
 
     return (
       <>
-        {/* {childUsers.map(user => {
-          return <h4>{user.username}</h4>;
-        })} */}
-
-        <h2>user id number : {this.props.match.params.id}</h2>
-        <h4>{selectedUserName} </h4>
+        {/* {console.log(this.props.childUsers[1].profileImage)} */}
+        {/* below hard code to user id `1` */}
+        <Image
+          className="w-25 w-25"
+          src={this.props.childUsers[1].profileImage}
+        />
+        <h4>
+          #{this.props.match.params.id} : {selectedUserName}{" "}
+        </h4>
 
         {/* since there are multiple images owned by every user, need to use .map */}
 
@@ -56,8 +59,8 @@ class UserProfilePage extends React.Component {
           <div className="d-flex flex-wrap w-75" style={{ height: "100%" }}>
             {images.map((everyImage, index) => {
               return (
-                <div style={{ width: "25%", height: "50%" }}>
-                  <Image className="h-100 w-100" key={index} src={everyImage} />
+                <div key={index} style={{ width: "25%", height: "50%" }}>
+                  <Image className="h-100 w-100" src={everyImage} />
                 </div>
               );
             })}

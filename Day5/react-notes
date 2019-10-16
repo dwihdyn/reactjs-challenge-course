@@ -13,3 +13,22 @@ function App(){} + state{} = class App extends React.Component{}
 ============================================================================================
 
 <input OnChange="..."> OnChange triggers everytime user type every single character in it 
+
+============================================================================================
+
+say we have project with navbar, homepage, etc, that is dependant to one `state` in app.js , 
+when we mutate the state directly (say direct mutate from navbar), homepage, etc will not be able to keep up with the new state, and breaks 
+
+============================================================================================
+
+array.filter( object => object.id !== id) // keep those objects that are NOT selected by the user
+
+============================================================================================
+
+`import bootstrap / reactStrap` in index.js will enable bootstrap function to ALL js file (app.js, homepage.js, ......)
+
+============================================================================================
+
+es7 extension : open .js file 
+> rce // class Component template 
+> rfce // function template

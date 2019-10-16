@@ -200,3 +200,14 @@ Collapse
 
 
 ============================================================================================
+
+
+when we make a call using API, we receive back JSON
+eg JSON
+{
+'id': 1,
+'image': imageclip/id:1/
+'username': 'dwi hadyan'
+
+
+}

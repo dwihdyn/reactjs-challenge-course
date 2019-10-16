@@ -9,6 +9,7 @@ Projects done :
     <li>Day2 : <strong>| tictactoe Incomplete | </strong>React Playground - Lets play & Some React basic  </li>
     <li>Day3 : React Nextagram - Intro, single & multiple component </li>
     <li>Day4 : React Nextagram - Frontend Routing</li>
-    <li>Day5 : Handling forms with React</li>
+    <li>Day5 : Handling forms with React + todo list</li>
+    <li>Day6 : React Nextagram - User Authentication (login modal, login & sign up controlled forms , sign up API)</li>
 
 </ol>
