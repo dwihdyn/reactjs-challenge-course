@@ -11,5 +11,6 @@ Projects done :
     <li>Day4 : React Nextagram - Frontend Routing</li>
     <li>Day5 : Handling forms with React + todo list</li>
     <li>Day6 : React Nextagram - User Authentication (login modal, login & sign up controlled forms , sign up API)</li>
+    <li>Day7 : React Nextagram - User Authentication (remaining last 3) & Image Uploads</li>
 
 </ol>

@@ -1,13 +1,16 @@
 import React from "react";
+import { Input } from "reactstrap";
 
 class SignUpForm extends React.Component {
   state = {
     userName: ``,
     email: ``,
-    passWord: ``
+    passWord: ``,
+    usernameValid: null
   };
 
-  handleSubmitNewUserData = e => {
+  // function to submit new user credentials to app.js
+  handleSubmitNewUser = e => {
     e.preventDefault();
     const { userName, email, passWord } = this.state;
 
@@ -16,11 +19,16 @@ class SignUpForm extends React.Component {
   };
 
   handleTypedInData = (name, value) => {
-    console.log(name); // keep track that this is username/email/password
-    console.log(value); // keep track what the user has entered
     this.setState({
       [name]: value
     });
+  };
+
+  // check whether the username entered is taken or not
+  handleUsernameAvailable = e => {
+    let newUserName = ``;
+    console.log(e);
+    // if (e.target.name === )
   };
 
   render() {
@@ -30,8 +38,8 @@ class SignUpForm extends React.Component {
         <h1 className="text-center">Sign Up Form</h1>
         <div className="w-50 mx-auto d-block">
           {/* below onsubmit is to avoid auto refresh & delete the new user data, and update the new user data using signUpNewUser() function from App.js */}
-          <form onSubmit={e => this.handleSubmitNewUserData(e)}>
-            <input
+          <form onSubmit={e => this.handleSubmitNewUser(e)}>
+            <Input
               className="form-control"
               type="text"
               placeholder="Enter your username"
@@ -40,8 +48,13 @@ class SignUpForm extends React.Component {
               onChange={e => {
                 this.handleTypedInData(e.target.name, e.target.value);
               }}
+              valid={
+                userName.length > 6
+                  ? (this.state.usernameValid = true)
+                  : (this.state.usernameValid = false)
+              }
             />
-            <input
+            <Input
               className="form-control"
               type="email"
               placeholder="Enter your email"
@@ -50,8 +63,9 @@ class SignUpForm extends React.Component {
                 this.handleTypedInData(e.target.name, e.target.value);
               }}
               name="email"
+              valid
             />
-            <input
+            <Input
               className="form-control"
               type="password"
               placeholder="Enter your password"
@@ -60,8 +74,16 @@ class SignUpForm extends React.Component {
                 this.handleTypedInData(e.target.name, e.target.value);
               }}
               name="passWord"
+              valid
             />
+            <button>Sign Up</button>
           </form>
+
+          {/* direct user who has account already to login page  */}
+          <button className="btn btn-link" onClick={this.props.handleLogin}>
+            {" "}
+            already have an account ? login now!{" "}
+          </button>
         </div>
       </>
     );

@@ -6,8 +6,15 @@ class LoginForm extends React.Component {
     passWord: ``
   };
 
+  // function that sends the user credentials to app.js
+  handleSubmitOldUser = e => {
+    e.preventDefault();
+    const { userName, passWord } = this.state;
+    // sends username & password data to app.js
+    this.props.loginUser(userName, passWord);
+  };
+
   handleTypedInData = (name, value) => {
-    console.log(name);
     this.setState({
       [name]: value // [name] will change to `userName` when user entering data in username, and same idea for `passWord`
     });
@@ -18,7 +25,8 @@ class LoginForm extends React.Component {
     return (
       <>
         <h1 className="text-center">Login Form : Your Account</h1>
-        <form>
+        {/* direct form submit to app.js using handleSubmitOldUser */}
+        <form onSubmit={e => this.handleSubmitOldUser(e)}>
           <input
             className="form-control"
             type="text"
@@ -27,7 +35,6 @@ class LoginForm extends React.Component {
             value={userName}
             onChange={e => {
               this.handleTypedInData(e.target.name, e.target.value); // update to state when event is happening (user typing input)
-              console.log(e.target.value);
             }}
           />
           <input
@@ -38,9 +45,9 @@ class LoginForm extends React.Component {
             value={passWord}
             onChange={e => {
               this.handleTypedInData(e.target.name, e.target.value); // update to state when event is happening (user typing input)
-              console.log(e.target.value);
             }}
           />
+          <button>Login</button>
         </form>
 
         {/* want to direct user to SignUpForm page when clicked the link below  */}

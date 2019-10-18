@@ -5,7 +5,7 @@ import SignUpForm from "../components/SignUpForm";
 
 class LoginPage extends React.Component {
   state = {
-    isLogin: false // true : loginForm | false : signupForm
+    isLogin: true // true : loginForm | false : signupForm
   };
 
   // function to change the isLogin to true/false
@@ -19,10 +19,12 @@ class LoginPage extends React.Component {
     const { isLogin } = this.state;
     return (
       <>
-        {console.log(isLogin)}
         <Container>
           {isLogin ? (
-            <LoginForm handleLogin={this.handleLogin} />
+            <LoginForm
+              handleLogin={this.handleLogin}
+              loginUser={this.props.loginUser}
+            />
           ) : (
             <SignUpForm
               handleLogin={this.handleLogin}
