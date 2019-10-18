@@ -242,8 +242,28 @@ controlled build new state = {} in the child class
 
 ============================================================================================
 
+3 == '3' // true. check value
+3 === '3' // false. check value & type
 
+============================================================================================
 
-- login button at top right navbar, shows floating pop up
-- pop up shows login + username, password, button to signup page AND form validation
-- 
+done
+- login button at top right navbar, will pop out login/signup page when clicked - login modal
+- put login/signup button on the pop up + disable submit button if one of the column arent filled up
+- put in API on both login/signup
+- build function to checking username availability
+
+todo
+(Thurs)
+- build function to give delay, once user stop typing
+- form validaton & `valid` reactstrap. accept when username is more than 6 letter, and no alarm if no input in username
+- store new/old user data in localstorage, on JWT format
+- setup profile page for tht given new/old user
+
+(Fri)
+- create uploadPage.js file for webpage to upload picture
+- able to preview the image before being uploaded
+- sending the image to the API
+- once uploaded, redirect user to their profile page
+
+============================================================================================

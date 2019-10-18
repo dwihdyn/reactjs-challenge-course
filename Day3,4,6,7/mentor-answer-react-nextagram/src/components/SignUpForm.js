@@ -1,5 +1,6 @@
 import React from "react";
 import { Input } from "reactstrap";
+import axios from "axios";
 
 class SignUpForm extends React.Component {
   state = {
@@ -18,21 +19,56 @@ class SignUpForm extends React.Component {
     this.props.signUpNewUser(userName, email, passWord);
   };
 
+  // check whether the username entered is taken or not
+  handleUsernameAvailable = e => {
+    if (e.target.value.length >= 6) {
+      // console.log(e.target.value); // triggers when 6 letter or more only
+      axios
+        .get(
+          `https://insta.nextacademy.com/api/v1/users/check_name?username=${e.target.value}`
+        )
+        .then(response => {
+          console.log(response.data);
+          console.log(`username exist ? ${response.data.exists}`);
+          console.log(`username can be used ? ${response.data.valid}`);
+          if (response.data.exists === false && response.data.valid === true) {
+            this.setState({
+              usernameValid: true
+            });
+            console.log(this.state.usernameValid);
+          } else {
+            this.setState({
+              usernameValid: false
+            });
+          }
+        });
+    }
+  };
+
+  // function to let user finish typing first before checking the usename availability. (reduce backend work)
+  handleTypingDelay = e => {
+    let enterredData = { ...e };
+
+    // use setTimeout() to give delay on every username check
+    let delay = setTimeout(
+      () => this.handleUsernameAvailable(enterredData),
+      5000
+    );
+    // implement the delay
+    this.setState({
+      [e.target.name]: e.target.value,
+      delay
+    });
+  };
+
   handleTypedInData = (name, value) => {
     this.setState({
       [name]: value
     });
   };
 
-  // check whether the username entered is taken or not
-  handleUsernameAvailable = e => {
-    let newUserName = ``;
-    console.log(e);
-    // if (e.target.name === )
-  };
-
   render() {
-    const { userName, email, passWord } = this.state;
+    const { userName, email, passWord, usernameValid } = this.state;
     return (
       <>
         <h1 className="text-center">Sign Up Form</h1>
@@ -47,12 +83,12 @@ class SignUpForm extends React.Component {
               value={userName}
               onChange={e => {
                 this.handleTypedInData(e.target.name, e.target.value);
+                // this.handleUsernameAvailable(e);
+                // combine handletypedindata & typingdelay together
+                this.handleTypingDelay(e);
               }}
-              valid={
-                userName.length > 6
-                  ? (this.state.usernameValid = true)
-                  : (this.state.usernameValid = false)
-              }
+              valid={usernameValid}
+              invalid={!usernameValid}
             />
             <Input
               className="form-control"
