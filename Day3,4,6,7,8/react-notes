@@ -267,3 +267,63 @@ todo
 - once uploaded, redirect user to their profile page
 
 ============================================================================================
+
+
+
+
+              <Input
+                className="form-control"
+                type="text"
+                placeholder="Enter your username"
+                name="userName" // must be same as your state name. to let computer know, that this input is the `userName`
+                value={userName}
+                onChange={e => {
+                  // enforce if the user still typing, dont run the delay, by using clearTimeout()
+                  // truty : any numerical | falsy : null. `if else` will run only one of the scenario, just `if` will run this.handleInputAndDelay(e) all the time, which is what you want
+                  if (this.state.delay) {
+                    clearTimeout(this.state.delay);
+                  }
+                  this.handleInputAndDelay(e);
+                }}
+
+
+              {/* /* if username.length > 6, 
+                  if again if username is taken, 
+                  `avaliable, you can have this username`
+                  else `nope, this username is taken`
+                else if username.length > 0,
+                `nope, username too short`
+                else `enter your username` */}
+
+                
+                // glowing box style
+                {...(userName.length >= 6
+                  ? usernameValid === true
+                    ? { valid: true }
+                    : { invalid: true }
+                  : userName.length > 0
+                  ? { invalid: true }
+                  : ``)}
+              />
+
+              {/* message box warnings */}
+              <FormFeedback
+              // logic
+              // {...(userName.length > 0 && userName.length >= 6
+              //   ? usernameValid
+              //     ? { valid: true }
+              //     : { invalid: "true" }
+              //   : { invalid: "true" })}
+              >
+                {/* the message output */}
+
+                {userName.length >= 6
+                  ? usernameValid === true
+                    ? ({ valid: true },
+                      `available, you can have this username`,
+                      console.log(usernameValid))
+                    : ({ invalid: true },
+                      `nope, username taken`,
+                      console.log(usernameValid))
+                  : `name too short`}
+              </FormFeedback>

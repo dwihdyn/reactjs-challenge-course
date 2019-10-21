@@ -13,5 +13,6 @@ Projects done :
     <li>Day6 : React Nextagram - User Authentication (login modal, login & sign up controlled forms , sign up API)</li>
     <li>Day6 : React Nextagram - User Authentication (remaining last 3)</li>
     <li>Day7 : React Nextagram - Image Uploads</li>
+    <li>Day8 : React Nextagram - Finishing Up (Deploy (unfinish) Nextagram to netlify )</li>
 
 </ol>
