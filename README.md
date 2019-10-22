@@ -14,5 +14,9 @@ Projects done :
     <li>Day6 : React Nextagram - User Authentication (remaining last 3)</li>
     <li>Day7 : React Nextagram - Image Uploads</li>
     <li>Day8 : React Nextagram - Finishing Up (Deploy (unfinish) Nextagram to netlify )</li>
+    <li>Day9 : Bonus - React Hooks + ToDoList using Hooks</li>
+    <li>Day10 : Bonus - React Native with Expo</li>
+    <hr />
+    <li>*NEXT Chatroom is exactly the same as message board, taught already in basic frontend class</li>
 
 </ol>

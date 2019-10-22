@@ -32,3 +32,4 @@ array.filter( object => object.id !== id) // keep those objects that are NOT sel
 es7 extension : open .js file 
 > rce // class Component template 
 > rfce // function template
+

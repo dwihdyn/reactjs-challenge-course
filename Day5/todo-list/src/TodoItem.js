@@ -31,30 +31,3 @@ const TodoItem = props => (
   </ul>
 );
 export default TodoItem;
-
-// class TodoItem extends React.Component {
-//   createTasks(allToDo) {
-//     return <li key={allToDo.key}>{allToDo.text}</li>;
-//   }
-//   render() {
-//     const todoEntries = this.props.allToDo;
-//     const listItems = todoEntries.map(this.createTasks);
-//     return <ul className="theList">{listItems}</ul>;
-//   }
-// }
-
-// class TodoItem extends React.Component{
-// render(){
-
-// }
-// }
-
-// createTasks = item => {
-//     return (
-//       <li key={item.key} onClick={() => this.props.deleteItem(item.key)}>
-//         {item.text}
-//       </li>
-//     )
-//   }
-
-/* <TodoItems entries={this.state.items}deleteItem={this.deleteItem}/> */
