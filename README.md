@@ -1,5 +1,7 @@
 # React.js challenge course
 
+<h3>All materials from the mentor can be found <a href="https://docs.google.com/spreadsheets/d/1LDTpuerINL82TXIxZjBHVJx1wITjz51GPvq-TQZkYIA/edit#gid=1040797680">HERE</a></h3>
+
 10 days (2 weeks) projects on exploring react.js (frontend javascript framework build by facebook)
 
 Projects done :
@@ -22,4 +24,4 @@ Projects done :
 </ol>
 
 
-<h4>All materials from the mentor can be found <a href="https://docs.google.com/spreadsheets/d/1LDTpuerINL82TXIxZjBHVJx1wITjz51GPvq-TQZkYIA/edit#gid=1040797680">HERE</a></h4>
+
