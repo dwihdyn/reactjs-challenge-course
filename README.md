@@ -20,3 +20,6 @@ Projects done :
     <li>*NEXT Chatroom is exactly the same as message board, taught already in basic frontend class</li>
 
 </ol>
+
+
+<h4>All materials from the mentor can be found <a href="https://docs.google.com/spreadsheets/d/1LDTpuerINL82TXIxZjBHVJx1wITjz51GPvq-TQZkYIA/edit#gid=1040797680">HERE</a></h4>
